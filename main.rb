@@ -1,14 +1,12 @@
-require_relative 'src/api'
-require 'yaml'
 require 'date'
+require 'yaml'
+require_relative 'src/api'
 
 @trading = Api.new
 @configurations = YAML.load_file('config.yml')
 
 def analyze
   ticker = @trading.getTicker
-  orderbook = @trading.getOrderbook
-  day_summary = @trading.getDaySummary
 
   last_purchase_order = @configurations['last_purchase_order'].to_f
   last_purchase_price = ticker[:last].to_f
@@ -30,7 +28,7 @@ def analyze
 end
 
 loop do
-  system("clear")
+  system(:clear.to_s)
   analyze
   sleep(@configurations['interval'].to_i)
 end

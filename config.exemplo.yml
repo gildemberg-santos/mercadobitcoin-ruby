@@ -1,0 +1,18 @@
+# Sigla da moeda
+moeda: ""
+
+# Ultima ordem de compra
+last_purchase_order: 0
+
+# Porcentagem de compra
+percentage: 0
+
+# Valor de compra
+purchase_value: 0
+
+# Intervalo de tempo de cada execução
+interval: 0
+
+urls:
+  # endereço da api -> https://www.mercadobitcoin.net/api
+  api: ""

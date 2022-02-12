@@ -1,7 +1,7 @@
+require 'date'
 require 'yaml'
 require 'uri'
 require 'net/http'
-require 'date'
 
 class Api
   def initialize

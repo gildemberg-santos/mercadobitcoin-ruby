@@ -14,16 +14,16 @@ def analyze
   sale_margin = last_purchase_order + (last_purchase_order * @configurations['percentage'].to_f)
   price_margin = (last_purchase_order / (last_purchase_price * 100)) * -1
 
-  puts "Último preço de compra: #{last_purchase_price}"
-  puts "Último pedido de compra: #{last_purchase_order}"
-  puts "Margem de compra: #{purchase_margin}"
-  puts "Margem de vendas: #{sale_margin}"
-  puts "Margem de preço : #{price_margin}"
+  puts "Último preço de compra \n↳ 💵 ⤑ R$%0.4f\n\n" % [last_purchase_price]
+  puts "Último pedido de compra \n↳ 💵 ⤑ R$%0.4f\n\n" % [last_purchase_order]
+  puts "Margem de compra \n↳ 💵 ⤑ R$%0.4f\n\n" % [purchase_margin]
+  puts "Margem de vendas \n↳ 💵 ⤑ R$%0.4f\n\n" % [sale_margin]
+  puts "Margem de preço \n↳ 💵 ⤑ LTC%0.4f\n\n" % [price_margin]
 
   if (last_purchase_price < last_purchase_order) && (last_purchase_price <= purchase_margin)
-    puts 'COMPRAR'
+    puts 'COMPRAR 📉'
   elsif (last_purchase_price > last_purchase_order) && (last_purchase_price >= sale_margin)
-    puts 'VENDER'
+    puts 'VENDER 📈'
   end
 end
 
